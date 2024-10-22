@@ -1,16 +1,19 @@
-package Aula01.vator;
+package Aula01_Vetor.vator;
 
 public class programa {
     public static void main(String[] args) {
+
+        /*
+            Aula 1  - Vetor -
+            https://youtu.be/8zVdz6TyV_c?si=CVQsQTCVvXfpk_hG
+        */
         int[] vetorzao = new int[10];
         vetorzao[0] = 3;
         vetorzao[1] = 4;
         vetorzao[3] = 13; //não precisa estar em ordem.
         vetorzao[2] = 8;
-        vetorzao[5] = 51; //não precisa estar em ordem.
-        vetorzao[4] = 22;
-        vetorzao[6] = 33;
-        System.out.println("Imprimendo");
+
+        System.out.println("Imprimindo");
 
         //se quiser somente uma posição
         System.out.println(vetorzao[0]);

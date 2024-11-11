@@ -1,6 +1,6 @@
 package escola;
 
-public class Pessos {
+public class Pessoa {
     String nome;
     int matricula;
     

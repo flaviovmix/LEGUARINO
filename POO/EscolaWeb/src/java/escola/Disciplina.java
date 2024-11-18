@@ -2,7 +2,7 @@ package escola;
 
 import java.util.ArrayList;
 
-public class Disciplica {
+public class Disciplina {
     private String nome;
     private int cargaHoraria;
 

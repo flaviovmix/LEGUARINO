@@ -6,7 +6,7 @@ public class Professor extends Pessoa{
     String formacaoAcademica;
     double salario;
     
-    ArrayList<Disciplica> disciplicas;
+    ArrayList<Disciplina> disciplicas;
     ArrayList<Turma> turmas;
     
     void aplicarAvaliacao() {

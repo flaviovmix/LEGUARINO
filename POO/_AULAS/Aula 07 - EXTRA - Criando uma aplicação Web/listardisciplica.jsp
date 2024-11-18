@@ -1,5 +1,6 @@
 <%@page 
-    import="escola.Disciplica"
+    import="escola.Disciplina"
+    import="java.util.ArrayList"
     contentType="text/html" pageEncoding="UTF-8"
 %>
 
@@ -29,15 +30,29 @@
             String nome = request.getParameter("nome");
             String cargaHoraria = request.getParameter("cargaHoraria");
             
-            Disciplica disciplina = new Disciplica();
+            ServletContext context = getServletContext();
+            ArrayList<Disciplina> vetDisciplina = (ArrayList<Disciplina>) context.getAttribute("vetDisciplina");
+
+            // Se a lista não existir no contexto, inicialize-a
+            if (vetDisciplina == null) {
+                vetDisciplina = new ArrayList<Disciplina>();
+                context.setAttribute("vetDisciplina", vetDisciplina);
+            }
+
+            // Adicionar a nova disciplina
+            Disciplina disciplina = new Disciplina();
             disciplina.setNome(nome);
             disciplina.setCargaHoraria(Integer.parseInt(cargaHoraria));
+            vetDisciplina.add(disciplina);
+
+            // Atualiza a lista no contexto
+            context.setAttribute("vetDisciplina", vetDisciplina);
+
         %>  
         
         <div class="container">
             
             <h1>Lista de Disciplinas</h1>
-
             <table class="table" style="width: 700px;">
                 <thead>
                   <tr>
@@ -47,11 +62,24 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td><%=nome%></td>
-                    <td class="text-center"><%=cargaHoraria%></td>
-                  </tr>
+                <%
+                    int index = 1;
+                    for(Disciplina disc: vetDisciplina) {
+                        out.print("<tr>");
+                            out.print("<td>");
+                                out.print(index);
+                            out.print("</td>");                        
+                            out.print("<td>");
+                                out.print( disc.getNome());
+                            out.print("</td>");
+                            out.print("<td class='text-center'>");
+                                out.print(disc.getCargaHoraria());
+                            out.print("</td>");
+                        out.print("</tr>");
+                        index++;
+                    }
+                %>
+                  
                 </tbody>
             </table>
                 

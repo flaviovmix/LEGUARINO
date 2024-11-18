@@ -8,7 +8,7 @@ public class Turma {
     
     private ArrayList<Aluno> alunos;
     private ArrayList<Professor> professores;
-    private ArrayList<Disciplica> disciplicas;
+    private ArrayList<Disciplina> disciplicas;
     
     void adicionarAluno() {
         

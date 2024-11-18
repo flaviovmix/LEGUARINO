@@ -1,4 +1,4 @@
-<%@page import="escola.Disciplica"%>
+<%@page import="escola.Disciplina"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
